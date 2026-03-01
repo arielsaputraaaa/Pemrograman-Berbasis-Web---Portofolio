@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Ariel Saputra D Loi</title>
+  <link rel="icon" type="image/png" href="assets/rissy.png">
+  
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div id="app">
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container d-flex align-items-center justify-content-between">
+
+    <a class="navbar-brand m-0" href="#home">
+      <img src="assets/rissy.png" alt="Logo" class="navbar-logo">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav align-items-center">
+        <li class="nav-item" v-for="menu in menus" :key="menu">
+          <a class="nav-link" :href="'#' + menu.toLowerCase()">
+            {{ menu }}
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero reveal">
+  <img src="assets/ps.png" class="hero-ps">
+  <img src="assets/ai.png" class="hero-ai">
+  <img src="assets/TEXT.png" class="hero-text">
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about-section reveal">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-5 text-center">
+        <img src="assets/ariel.png" class="about-img">
+      </div>
+      <div class="col-md-7">
+        <h2 class="about-name">Mohamad Ariel Saputra D Loi</h2>
+        <p class="about-desc">
+          Saya adalah seorang Graphic Designer yang memiliki ketertarikan besar pada desain visual, branding, dan pengembangan tampilan digital. 
+          Berpengalaman menggunakan berbagai tools desain seperti Adobe Photoshop dan Adobe Illustrator untuk menciptakan karya yang komunikatif, estetis, dan sesuai dengan kebutuhan klien. 
+          Saya terbiasa bekerja secara detail, kreatif, serta mampu beradaptasi dengan tren desain modern, baik untuk kebutuhan media digital maupun cetak.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="bg-light reveal">
+  <div class="container">
+    <h2 class="text-center mb-5">Skills</h2>
+    <div class="row justify-content-center text-center">
+      <div class="col-md-5 col-lg-4 mb-4" v-for="skill in skills" :key="skill.name">
+        <h5>{{ skill.name }}</h5>
+        <div class="progress">
+          <div class="progress-bar"
+               :style="{ width: skill.level + '%' }">
+            {{ skill.level }}%
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HISTORY -->
+<section id="history" class="reveal">
+  <div class="container">
+    <h2 class="text-center mb-5">History</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4" v-for="item in history" :key="item.title">
+        <div class="card shadow history-card">
+          <div class="card-body">
+            <h5 class="card-title">{{ item.title }}</h5>
+            <p class="card-text">{{ item.desc }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="certificate-box mt-5 text-center">
+    <h4 class="mb-4">Sertifikat</h4>
+    <div class="certificate-card">
+      <img src="assets/SERTIFIKAT.jpg" class="certificate-img">
+    </div>
+  </div>
+</section>
+
+<footer class="bg-dark text-white text-center py-3">
+  <p>© 2026 {{ brand }} | Graphic Designer</p>
+</footer>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<script>
+Vue.createApp({
+  data() {
+    return {
+      brand: "Mohamad Ariel Saputra D loi",
+      menus: ["Home", "About", "Skills", "History"],
+      skills: [
+        { name: "Adobe Photoshop", level: 100 },
+        { name: "Adobe Illustrator", level: 70 },
+        { name: "CorelDRAW", level: 50 },
+        { name: "Canva", level: 80 }
+      ],
+      history: [
+        {
+          title: "Junior Graphic Designer (Diskominfo Banjarmasin)",
+          desc: "Complete + Mendapatkan Sertifikat BNSP"
+        },
+        {
+          title: "Desain Grafis Muda – BLENDED (BPVP Samarinda)",
+          desc: "Complete + Mendapatkan Sertifikat"
+        },
+        {
+          title: "PKL – Pakleksport",
+          desc: "Mengelola sosial media, mendesain baju & jersey, serta menangani proses produksi."
+        }
+      ]
+    }
+  },
+  mounted() {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll(".reveal").forEach(el => {
+      observer.observe(el);
+    });
+  }
+}).mount('#app')
+</script>
+
+</body>
+</html>

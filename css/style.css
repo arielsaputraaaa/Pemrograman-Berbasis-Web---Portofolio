@@ -1,0 +1,386 @@
+/* style.css */
+/* ================= GLOBAL ================= */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  padding-top: 80px;
+}
+
+/* NAVBAR LOGO */
+.navbar-logo {
+  height: 55px;          /* diperbesar */
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* ================= NAVBAR MODERN ================= */
+
+.navbar {
+  background-color: #000;
+  padding: 12px 0;
+}
+
+/* Logo */
+.navbar-logo {
+  height: 38px;
+  width: auto;
+}
+
+/* Toggler Button */
+.navbar-toggler {
+  border: 2px solid #fff;
+  padding: 6px 10px;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+/* Saat ditekan */
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  background-color: #fff;
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  background-image: none;
+  width: 22px;
+  height: 2px;
+  background-color: white;
+  position: relative;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 2px;
+  background-color: white;
+  left: 0;
+}
+
+.navbar-toggler-icon::before {
+  top: -6px;
+}
+
+.navbar-toggler-icon::after {
+  top: 6px;
+}
+/* Saat ditekan garis jadi hitam */
+.navbar-toggler:focus .navbar-toggler-icon,
+.navbar-toggler:active .navbar-toggler-icon {
+  filter: invert(0);
+}
+
+/* Menu link */
+.navbar .nav-link {
+  color: #fff !important;
+  margin-left: 25px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.navbar .nav-link:hover {
+  color: #aaa !important;
+}
+/* ================= HERO ================= */
+.hero {
+  height: 100vh;
+  background-image: url('../assets/BACKGROUND.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* TEXT TENGAH (FOCUS UTAMA) */
+.hero-text {
+  width: 50%;
+  max-width: 900px;
+  position: relative;
+  z-index: 3;
+}
+
+/* PS — KIRI ATAS (SEPERTI DESAIN ASLI) */
+.hero-ps {
+  position: absolute;
+  left: 15%;
+  top: 10%;
+  width: 190px;
+  z-index: 2;
+  scale: 1.3;
+}
+
+/* AI — KANAN BAWAH (SEPERTI DESAIN ASLI) */
+.hero-ai {
+  position: absolute;
+  right: 14%;
+  bottom: 20%;
+  width: 190px;
+  z-index: 2;
+  scale: 1.3;
+}
+
+/* ================= SECTION ================= */
+section {
+  padding: 100px 0;
+  scroll-margin-top: 80px;
+}
+
+/* ================= ABOUT ================= */
+
+.about-section {
+  background-color: #f5f5f5;
+  padding: 120px 0;
+}
+
+.about-img {
+  width: 100%;
+  max-width: 350px;
+}
+
+.about-name {
+  font-family: 'Parisienne', cursive;
+  font-size: 41px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #111;
+  margin-bottom: 30px;
+}
+
+.about-desc {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* ================= PROJECT ================= */
+.project-card {
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .hero-text {
+    width: 80%;
+  }
+
+  .hero-ps {
+    width: 140px;
+    left: 5%;
+    top: 18%;
+  }
+
+  .hero-ai {
+    width: 140px;
+    right: 6%;
+    bottom: 18%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .hero-text {
+    width: 88%;
+  }
+
+  .hero-ps {
+    width: 100px;
+    left: 4%;
+    top: 14%;
+  }
+
+  .hero-ai {
+    width: 100px;
+    right: 4%;
+    bottom: 14%;
+  }
+}
+
+/* ================= SKILLS ================= */
+
+.progress {
+  height: 16px;
+  background-color: #ddd;
+  border-radius: 20px;
+}
+
+.progress-bar {
+  background-color: #000 !important;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 20px;
+}
+
+
+
+/* ================= MOBILE FIX ABOUT ================= */
+@media (max-width: 768px) {
+
+  .about-section {
+    text-align: center;
+    padding: 80px 20px;
+  }
+
+  .about-section .row {
+    flex-direction: column;
+  }
+
+  .about-img {
+    max-width: 250px;
+    margin-bottom: 30px;
+  }
+
+  .about-name {
+    font-size: 48px;
+    line-height: 1.2;
+  }
+
+  .about-desc {
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+}
+
+/* ================= FIX MOBILE HISTORY & CERTIFICATE ================= */
+
+@media (max-width: 768px) {
+
+  /* Hilangkan scroll ke samping */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Container history center */
+  #history .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* Card history full width */
+  #history .card {
+    width: 100%;
+    margin: 0 auto 20px;
+  }
+
+  /* Certificate box center */
+  .certificate-box {
+    width: 100%;
+    margin: 40px auto 0;
+    padding: 0 15px;
+    text-align: center;
+  }
+
+  .certificate-card {
+    padding: 15px;
+  }
+
+  /* Paksa gambar tidak lebih besar dari layar */
+  .certificate-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+}
+
+/* ================= ANIMATION SYSTEM ================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* HERO ANIMATION */
+.hero-text {
+  animation: fadeZoom 1.5s ease forwards;
+}
+
+.hero-ps {
+  animation: floatLeft 4s ease-in-out infinite;
+}
+
+.hero-ai {
+  animation: floatRight 4s ease-in-out infinite;
+}
+
+@keyframes fadeZoom {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes floatLeft {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes floatRight {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(15px); }
+}
+
+/* Navbar slide */
+.navbar {
+  animation: slideDown 0.8s ease;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+/* Skill grow */
+.progress-bar {
+  animation: growBar 2s ease;
+}
+
+@keyframes growBar {
+  from { width: 0; }
+}
+
+/* Card hover */
+.history-card {
+  transition: 0.4s ease;
+}
+
+.history-card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* Certificate hover */
+.certificate-card {
+  transition: 0.4s ease;
+}
+
+.certificate-card:hover {
+  transform: scale(1.03);
+}
