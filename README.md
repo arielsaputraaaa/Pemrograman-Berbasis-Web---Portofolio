@@ -1,7 +1,5 @@
 # WEBSITE PORTOFOLIO
 
-<img width="1873" height="877" alt="image" src="https://github.com/user-attachments/assets/cad66d49-fb7a-482e-8ca0-751464271ae7" />
-
 NAMA : Mohamad Ariel Saputra D Loi 
 
 NIM : 2409116087
