@@ -1,0 +1,635 @@
+/* ================= GLOBAL ================= */
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+padding-top:80px;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+background-color:#000;
+padding:12px 0;
+animation:slideDown 0.8s ease;
+}
+
+/* Logo */
+
+.navbar-logo{
+height:38px;
+width:auto;
+object-fit:contain;
+display:block;
+}
+
+/* Navbar menu */
+
+.navbar .nav-link{
+color:#fff !important;
+margin-left:25px;
+font-weight:300;
+letter-spacing:1px;
+transition:0.3s;
+}
+
+.navbar .nav-link:hover{
+color:#aaa !important;
+}
+
+/* Toggler */
+
+.navbar-toggler{
+border:2px solid #fff;
+padding:6px 10px;
+border-radius:10px;
+transition:0.3s ease;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active{
+background-color:#fff;
+outline:none;
+box-shadow:none;
+}
+
+.navbar-toggler-icon{
+background-image:none;
+width:22px;
+height:2px;
+background-color:white;
+position:relative;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after{
+content:"";
+position:absolute;
+width:22px;
+height:2px;
+background-color:white;
+left:0;
+}
+
+.navbar-toggler-icon::before{
+top:-6px;
+}
+
+.navbar-toggler-icon::after{
+top:6px;
+}
+
+.navbar-toggler:focus .navbar-toggler-icon,
+.navbar-toggler:active .navbar-toggler-icon{
+filter:invert(0);
+}
+
+/* ================= HERO ================= */
+
+.hero{
+height:100vh;
+background-image:url('../assets/BACKGROUND.jpg');
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+}
+
+/* TEXT HERO */
+
+.hero-text{
+width:50%;
+max-width:900px;
+position:relative;
+z-index:3;
+animation:fadeZoom 1.5s ease forwards;
+}
+
+/* ICON PHOTOSHOP */
+
+.hero-ps{
+position:absolute;
+left:15%;
+top:10%;
+width:190px;
+z-index:2;
+scale:1.3;
+animation:floatLeft 4s ease-in-out infinite;
+}
+
+/* ICON ILLUSTRATOR */
+
+.hero-ai{
+position:absolute;
+right:14%;
+bottom:20%;
+width:190px;
+z-index:2;
+scale:1.3;
+animation:floatRight 4s ease-in-out infinite;
+}
+
+/* ================= SECTION ================= */
+
+section{
+padding:100px 0;
+scroll-margin-top:80px;
+}
+
+/* ================= ABOUT ================= */
+
+.about-section{
+background-color:#f5f5f5;
+padding:120px 0;
+}
+
+.about-img{
+width:100%;
+max-width:350px;
+}
+
+.about-name{
+font-family:'Parisienne',cursive;
+font-size:41px;
+font-weight:400;
+line-height:1.1;
+color:#111;
+margin-bottom:30px;
+}
+
+.about-desc{
+font-size:16px;
+line-height:1.8;
+color:#333;
+}
+
+/* ================= SKILLS ================= */
+
+.skills-wrapper{
+display:flex;
+align-items:flex-start;
+justify-content:center;
+gap:35px;
+max-width:900px;
+margin:auto;
+}
+
+/* icon software */
+
+.skills-image{
+flex:0 0 80px;
+}
+
+.software-img{
+width:80px;
+height:auto;
+}
+
+/* skill bar */
+
+.skills-bars{
+flex:1;
+}
+
+.skill-row{
+margin-bottom:25px;
+}
+
+.skill-title{
+display:flex;
+justify-content:space-between;
+font-weight:600;
+margin-bottom:6px;
+}
+
+.progress{
+height:14px;
+background:#ddd;
+border-radius:20px;
+}
+
+.progress-bar{
+background:#000;
+border-radius:20px;
+animation:growBar 2s ease;
+}
+
+/* ===== PORTFOLIO SLIDER ===== */
+
+.portfolio-wrapper{
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
+}
+
+.portfolio-slider{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:30px;
+transition:all 0.5s ease;
+}
+
+/* semua gambar */
+
+.design-item img{
+width:360px;
+border-radius:16px;
+transition:all 0.5s ease;
+box-shadow:0 20px 50px rgba(0,0,0,0.25);
+}
+
+/* kiri */
+
+.design-item.left img{
+opacity:0.35;
+transform:scale(0.8) translateX(-40px);
+filter:blur(2px);
+}
+
+/* tengah */
+
+.design-item.center img{
+opacity:1;
+transform:scale(1.08);
+z-index:2;
+}
+
+/* kanan */
+
+.design-item.right img{
+opacity:0.35;
+transform:scale(0.8) translateX(40px);
+filter:blur(2px);
+}
+
+/* ===== PORTFOLIO BUTTON ===== */
+
+.nav-btn{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+width:50px;
+height:50px;
+border:none;
+border-radius:50%;
+background:white;
+color:black;
+font-size:22px;
+cursor:pointer;
+box-shadow:0 5px 20px rgba(0,0,0,0.15);
+transition:0.3s;
+z-index:5;
+}
+
+.nav-btn:hover{
+background:black;
+color:white;
+transform:translateY(-50%) scale(1.1);
+}
+
+.nav-btn.left{
+left:-20px;
+}
+
+.nav-btn.right{
+right:-20px;
+}
+
+/* ================= HISTORY ================= */
+
+#history .row{
+justify-content:center;
+}
+
+.history-card{
+border-radius:12px;
+overflow:hidden;
+height:100%;
+transition:0.4s ease;
+}
+
+.history-card:hover{
+transform:translateY(-8px) scale(1.02);
+}
+
+/* ukuran gambar history agar sama */
+
+.history-img{
+width:100%;
+height:300px;
+object-fit:cover;
+}
+
+/* posisi crop khusus SMK */
+
+.history-smk{
+object-position:center 65%;
+}
+
+/* ================= CERTIFICATE ================= */
+
+.certificate-box{
+width:100%;
+margin:40px auto 0;
+padding:0 15px;
+text-align:center;
+}
+
+.certificate-card{
+padding:15px;
+transition:0.4s ease;
+}
+
+.certificate-card:hover{
+transform:scale(1.03);
+}
+
+.certificate-img{
+  width:100%;
+  max-width:500px;   /* batas ukuran sertifikat */
+  height:auto;
+  display:block;
+  margin:0 auto;
+}
+
+/* ================= CONTACT ================= */
+
+.contact-section{
+background:#f5f5f5;
+padding:120px 0;
+}
+
+.social-container{
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+}
+
+.social-box{
+background:white;
+padding:30px;
+border-radius:15px;
+text-align:center;
+text-decoration:none;
+color:black;
+width:220px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.social-box:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,0.2);
+}
+
+.social-icon{
+width:65px;
+height:65px;
+object-fit:contain;
+margin-bottom:15px;
+}
+
+.social-box p{
+font-size:14px;
+color:#666;
+word-break:break-word;
+}
+
+.social-box p{
+font-size:14px;
+color:#666;
+}
+
+/* ================= ANIMATION ================= */
+
+.reveal{
+opacity:0;
+transform:translateY(60px);
+transition:all 1s ease;
+}
+
+.reveal.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* hero animation */
+
+@keyframes fadeZoom{
+from{opacity:0; transform:scale(0.9);}
+to{opacity:1; transform:scale(1);}
+}
+
+@keyframes floatLeft{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+}
+
+@keyframes floatRight{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(15px);}
+}
+
+@keyframes growBar{
+from{width:0;}
+}
+
+@keyframes slideDown{
+from{transform:translateY(-100%);}
+to{transform:translateY(0);}
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* tablet */
+
+@media(max-width:992px){
+
+.hero-text{
+width:80%;
+}
+
+.hero-ps{
+width:140px;
+left:5%;
+top:18%;
+}
+
+.hero-ai{
+width:140px;
+right:6%;
+bottom:18%;
+}
+
+}
+
+/* mobile */
+
+/* ===== MOBILE PORTFOLIO FIX ===== */
+
+@media(max-width:768px){
+
+.design-item img{
+width:220px;
+}
+
+.portfolio-slider{
+gap:15px;
+}
+
+.design-item.center img{
+transform:scale(1.05);
+}
+
+.design-item.left img,
+.design-item.right img{
+transform:scale(0.75);
+}
+
+.nav-btn{
+width:40px;
+height:40px;
+font-size:18px;
+}
+
+}
+
+.nav-btn.left{
+left:-10px;
+}
+
+.nav-btn.right{
+right:-10px;
+}
+
+@media(max-width:768px){
+
+body{
+overflow-x:hidden;
+}
+
+.about-section{
+text-align:center;
+padding:80px 20px;
+}
+
+.about-section .row{
+flex-direction:column;
+}
+
+.about-img{
+max-width:250px;
+margin-bottom:30px;
+}
+
+.about-name{
+font-size:48px;
+line-height:1.2;
+}
+
+.about-desc{
+font-size:16px;
+line-height:1.8;
+}
+
+#history .container{
+padding-left:20px;
+padding-right:20px;
+}
+
+#history .card{
+width:100%;
+margin:0 auto 20px;
+}
+
+.history-card{
+width:95%;
+}
+
+.skill-row{
+gap:15px;
+}
+
+.skill-title{
+font-size:14px;
+}
+
+}
+
+@media(max-width:576px){
+
+.hero-text{
+width:88%;
+}
+
+.hero-ps{
+width:100px;
+left:4%;
+top:14%;
+}
+
+.hero-ai{
+width:100px;
+right:4%;
+bottom:14%;
+}
+
+}
+
+/* ===== SLIDER ANIMATION ===== */
+
+.portfolio-slider{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:40px;
+transition:all 0.5s ease;
+}
+
+/* semua gambar */
+
+.design-item{
+transition:all 0.5s ease;
+}
+
+/* kiri */
+
+.design-item.left img{
+opacity:0.3;
+transform:scale(0.8) translateX(-20px);
+filter:blur(1px);
+}
+
+/* tengah */
+
+.design-item.center img{
+opacity:1;
+transform:scale(1.08);
+z-index:2;
+}
+
+/* kanan */
+
+.design-item.right img{
+opacity:0.3;
+transform:scale(0.8) translateX(20px);
+filter:blur(1px);
+}
+
+.design-item.center img:hover{
+transform:scale(1.12);
+box-shadow:0 25px 70px rgba(0,0,0,0.35);
+}
